@@ -1,0 +1,481 @@
+/* -------- Base Styles -------- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(251, 178, 46);
+}
+
+header {
+    background-color: rgb(251, 178, 46);
+    color: white;
+    padding: 1.2rem;
+    margin-top: 30px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;          /* allows wrapping on small screens */
+  justify-content: center;  /* center nav links */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav a {
+    color: black;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgb(9, 107, 52);
+    font-size: 1.2em;
+}
+
+nav img.social-icon {
+    width: 24px;      /* Size of the icon */
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* -------- Hero Section -------- */
+h1 {
+    color:rgb(213, 50, 6);
+    font-family: Arial, sans-serif;
+    text-align: center;  
+    font-size: 5em;       
+    margin-top: 10px;      
+    margin-bottom: 10px;
+
+    font: bold;
+    line-height: 0.5;
+    font-family: "algerian", sans-serif;
+}
+
+.veggie {
+    font-size: 0.6em;
+    color: rgb(9, 107, 52);
+}
+
+.fiesta {
+    color:rgb(213, 50, 6);
+    font-size: 0.6em;
+    margin-top: 0px;
+}
+
+.tagline {
+    color:rgb(9, 107, 52);
+    font-size: 0.35em;
+}
+
+/* -------- Main Content -------- */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* space between image and text */
+  width: 90%;
+  max-width: 1350px;   /* controls how wide the content can get */
+  margin: 0 auto;      /* centers the container horizontally */
+  padding: 1rem; 
+  text-align: center;
+  overflow: hidden
+}
+
+.full-width {
+    flex: 1;                /* take up available space */
+    width: 100%;
+    max-width: 600px;
+    height: auto; 
+    display: block; /* Removes any extra spacing */
+    border-radius: 45px;
+    object-fit: contain;
+}
+
+p {
+ flex: 1;
+ font-family: 'Californian FB', 'Times New Roman', Times, serif; 
+ font-size: 1.8rem;
+ text-align: center; 
+ line-height: 1.6;  
+ margin: 20px auto;
+ max-width: 800px;
+}
+
+/* -------- Responsive Typography & Layout -------- */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav a {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 3em;
+    line-height: 0.8;
+  }
+
+  p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .container {
+    display: flex; 
+    width: 95%;
+    flex-direction: column; /* stack vertically */
+    text-align: center; 
+  }
+
+  .container p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .full-width {
+    border-radius: 20px;
+    max-width: 100%;
+     object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* On smaller screens, crop for a banner effect */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 250px;            /* fixed height for mobile */
+        object-fit: cover;        /* crops without stretching */
+        object-position: center;  /* keeps focus in the middle */
+    }
+}
+
+/* Responsive full-width image */
+.hero-image {
+    width: 100%;
+    height: auto; /* default for desktop */
+    display: block;
+}
+
+.gallery {
+  width: 50%;
+  padding: 50px;
+}
+
+img {
+  width: 100%;
+}
+
+@font-face {
+  font-family: "Algerian";
+  src: url("fonts/Algerian.woff2") format("woff2"),
+       url("fonts/Algerian.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.container img {
+  width: 650px;
+  border-radius: 45px; /* keep your style */
+}
+
+footer p {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px
+}
+
+
+.menu {
+    border-radius: 45px;
+    border: 2px solid black;
+    padding: 20px;               /* space inside */
+    max-width: 1350px;            /* optional: keeps it from stretching too wide */
+    max-height: fit-content;
+    margin: auto;
+    background: url(kookaburra.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    color: rgb(213, 50, 6);
+}
+
+.price {
+  font-weight: bold;
+}
+
+.item-name {
+  font-family: "Algerian";
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+
+.menu p{
+   font-size: 20px; 
+   text-align: left;
+   padding-left: 20px;
+   line-height: 1.4;
+   padding-bottom: 20px;
+   margin-top: 0;
+   color:black;
+}
+
+.menu::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.7); /* white overlay at 70% */
+    border-radius: 45px; /* match menu rounding */
+    z-index: 0; /* sit behind content */
+}
+
+.menu > * {
+    position: relative;
+    z-index: 1;
+}
+
+.menu-list {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.menu-row {
+  gap: 10px;
+  margin-bottom: 8px; /* spacing between rows */
+  display: grid;
+  grid-template-columns: 200px auto; /* name + price */
+}
+
+.extra-name {
+  text-align: left;
+  color: black; 
+  font-family: 'Californian FB', 'Times New Roman', Times, serif; 
+  font-size: 20px; 
+}
+
+.extra-price {
+  text-align: left;  
+  font-weight: bold;
+  color: black;
+}
+
+.menu-line {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px; 
+  font-size: 20px;
+  color: black;
+}
+
+.drink-price {
+  margin-left: 40px; 
+  font-weight: bold;
+  color: black;
+}
+
+.drink {
+  text-align: left;
+  color: black; 
+  font-family: 'Californian FB', 'Times New Roman', Times, serif; 
+  font-size: 20px; 
+  white-space: nowrap;
+  padding-left: 20px;
+  padding-right: 300px; 
+}
+
+/* about section */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;       /* optional max width */
+  aspect-ratio: 16 / 16;   /* maintains consistent height based on width */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 45px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* space between image and text */ 
+  text-align: center;
+  margin-right: 1rem;
+}
+
+/* All images stacked on top of each other */
+.carousel img {
+  position: absolute;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0 */
+  width: 100%;
+  height: auto;
+  object-fit: cover;   
+  opacity: 0;
+  transition: opacity 1s ease-in-out;  /* smooth fade */
+  z-index: 1;
+}
+
+/* Active image */
+.carousel img.active {
+  opacity: 1;
+  z-index: 2;
+}
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr;    /* mobile: one column */
+  gap: 3rem;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    grid-template-columns: 1.2fr 1fr;  /* carousel bigger than text */
+    align-items: center;
+  }
+
+  .carousel {
+    max-width: 100%;   /* prevents shrinking */
+  }
+}
+
+.carousel-container {
+  padding: 2rem;
+}
+
+/* Contact section */
+
+.contact-us iframe {
+  width: 400px;
+  max-width: 600px;
+  height: 400px;
+  border-radius: 40px;
+  border: none;
+}
+
+.contact-us {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.map-section {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+}
+
+.address {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.contact-text {
+  flex: 1;
+  max-width: 400px;
+}
+
+.contact-text h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.contact-text p {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  margin: 2px 0;
+  text-align: left;
+}
+
+/* Future contact form styling */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: left;
+  padding: 40px;
+  border-top: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-form p {
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  color: #333;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+legend {
+  font-weight: bold;
+  color: #444;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
