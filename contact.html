@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact us</a>
+    <a href="catering.html">Catering</a>
+    <a href="about.html">About us</a>
+    <a href="https://www.facebook.com/profile.php?id=100088882007303" target="_blank">
+      <img src="Facebook Thumbnail.webp" alt="Visit our Facebook page" class="social-icon">
+    </a>
+  </nav>
+  <hr>
+</header>
+<head>
+  <body>
+        <h1>
+            <span class="veggie">VEGGIE</span><br>
+            <span class="fiesta">FIESTA</span><br>
+            <span class="tagline">Contact us</span>
+        </h1>
+  <main>
+    <section class="contact-us">
+    <div class="map-section">
+      <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1467891299485!2d153.22096647628203!3d-28.595372875684987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9097c908c342c5%3A0x3fcb0f72866942ff!2s3%20Sibley%20St%2C%20Nimbin%20NSW%202480!5e0!3m2!1sen!2sau!4v1761212394066!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    width="600"
+    height="600"
+    style="border:0; border-radius:20px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+   <p class="address">
+        3 Sibley St, Nimbin NSW 2480<br>
+        Australia
+   </p>
+    </div>
+
+    <div class="contact-text">
+<h2>Opening Hours</h2>
+<p>Thursday &nbsp;&ndash;&nbsp; Friday: 11am &nbsp;&ndash;&nbsp; 4pm</p>
+​<p>​Saturday &nbsp;&ndash;&nbsp; Wednesday: Closed</p>
+      </div>
+    </section>
+
+<section class="contact-form">
+  <h2>Contact Us</h2>
+  <p>
+    Thanks for reaching out, we appreciate all feedback! If you're contacting
+    us regarding our catering services, we endeavour to provide a response
+    within 72 hours.
+  </p>
+
+  <form action="https://formspree.io/f/mwpwbqgl" method="POST">
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="full-name">Name (required):</label>
+      <input type="text" id="full-name" name="name" placeholder="e.g., John Doe" required>
+
+      <label for="email">Email address (required):</label>
+      <input type="email" id="email" name="email" placeholder="example@email.com" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Are you contacting us about our catering service?</legend>
+      <label><input type="radio" name="catering" value="yes"> Yes</label>
+      <label><input type="radio" name="catering" value="no"> No</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Are you contacting us about our food or service?</legend>
+      <label><input type="radio" name="food_service" value="yes"> Yes</label>
+      <label><input type="radio" name="food_service" value="no"> No</label>
+    </fieldset>
+
+    <fieldset>
+      <label for="comments">Other Comments?</label>
+      <textarea id="comments" name="comments" rows="5" placeholder="Write your message here..."></textarea>
+    </fieldset>
+
+ <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> 
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+  </main>
