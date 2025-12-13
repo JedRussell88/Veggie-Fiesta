@@ -50,7 +50,6 @@ h1 {
     font-size: 5em;       
     margin-top: 10px;      
     margin-bottom: 10px;
-
     font: bold;
     line-height: 0.5;
     font-family: "algerian", sans-serif;
@@ -82,23 +81,25 @@ h1 {
   gap: 2rem; /* space between image and text */
   width: 90%;
   max-width: 1350px;   /* controls how wide the content can get */
-  margin: 0 auto;      /* centers the container horizontally */
-  padding: 1rem; 
   text-align: center;
-  overflow: hidden
+  padding-right: 5%; 
+  padding-left: 5%;  /* optional for symmetry */
+    margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .full-width {
     flex: 1;                /* take up available space */
     width: 100%;
-    max-width: 600px;
+    max-width: calc(100% - 1rem);
     height: auto; 
     display: block; /* Removes any extra spacing */
     border-radius: 45px;
     object-fit: contain;
+    overflow: hidden;
 }
 
-p {
+.container p {
  flex: 1;
  font-family: 'Californian FB', 'Times New Roman', Times, serif; 
  font-size: 1.8rem;
@@ -109,17 +110,19 @@ p {
 }
 
 /* -------- Responsive Typography & Layout -------- */
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 4rem;
-  }
-
-  p {
-    font-size: 1.5rem;
-  }
-}
-
 @media (max-width: 768px) {
+  .container {
+    width: 95%;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .container p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
   nav a {
     font-size: 1rem;
   }
@@ -134,52 +137,22 @@ p {
     padding: 0 1rem;
   }
 
-  .container {
-    display: flex; 
-    width: 95%;
-    flex-direction: column; /* stack vertically */
-    text-align: center; 
-  }
-
-  .container p {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-  }
-
   .full-width {
-    border-radius: 20px;
-    max-width: 100%;
-     object-fit: cover;
+    width: 100%;
+    max-width: calc(100% - 1rem);
+    object-fit: cover;
+    border-radius: 45px;
+    padding-right: 1rem; 
+    padding-left: 0.5rem;
+  }
+
+  .hero-image {
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  footer p {
-    font-size: 0.9rem;
-  }
-}
-
-/* On smaller screens, crop for a banner effect */
-@media (max-width: 768px) {
-    .hero-image {
-        height: 250px;            /* fixed height for mobile */
-        object-fit: cover;        /* crops without stretching */
-        object-position: center;  /* keeps focus in the middle */
-    }
-}
 
 /* Responsive full-width image */
 .hero-image {
@@ -206,16 +179,17 @@ img {
 }
 
 
-.container img {
-  width: 650px;
-  border-radius: 45px; /* keep your style */
-}
-
 footer p {
   font-family: 'Times New Roman', Times, serif;
   text-align: left;
   font-size: 12px;
   padding: 10px
+}
+
+/* -------- Menu Content -------- */
+
+.menu * {
+    text-align: left !important;
 }
 
 
@@ -240,8 +214,31 @@ footer p {
 .item-name {
   font-family: "Algerian";
   text-align: left;
-  padding-left: 20px;
   margin-bottom: 5px;
+  display: block;
+  width: 100%;
+  padding-left: 0 !important;
+}
+
+.item-content {
+  padding-left: 20px;   /* controls the shared left edge */
+  text-align: left;
+}
+
+.item-name,
+.description {
+  padding-left: 0 !important;  /* stop them creating their own offset */
+  margin-left: 0;
+}
+
+.menu .item-header p.description {
+  text-align: left !important;
+  padding-left: 20px;
+}
+
+.item-header {
+  text-align: left;
+  padding-left: 20px;
 }
 
 .menu p{
@@ -249,7 +246,6 @@ footer p {
    text-align: left;
    padding-left: 20px;
    line-height: 1.4;
-   padding-bottom: 20px;
    margin-top: 0;
    color:black;
 }
@@ -270,7 +266,7 @@ footer p {
 
 .menu-list {
   font-size: 20px;
-  padding-left: 20px;
+  padding-left: 0 !important;
 }
 
 .menu-row {
@@ -278,6 +274,7 @@ footer p {
   margin-bottom: 8px; /* spacing between rows */
   display: grid;
   grid-template-columns: 200px auto; /* name + price */
+  padding-left: 0 !important
 }
 
 .extra-name {
@@ -295,9 +292,11 @@ footer p {
 
 .menu-line {
   display: flex;
-  justify-content: space-between; 
+  flex-direction: column;  
   gap: 20px; 
   font-size: 20px;
+  text-align: left;  
+  font-weight: bold;
   color: black;
 }
 
@@ -308,16 +307,31 @@ footer p {
 }
 
 .drink {
-  text-align: left;
+  display: flex;
+  align-items: center;
   color: black; 
   font-family: 'Californian FB', 'Times New Roman', Times, serif; 
   font-size: 20px; 
   white-space: nowrap;
-  padding-left: 20px;
-  padding-right: 300px; 
+}
+
+@media (max-width: 480px) {
+  .menu-row {
+    grid-template-columns: 1fr auto;   /* name shrinks, price stays visible */
+  }
 }
 
 /* about section */
+
+.about-text {
+  text-align: center;
+  color: black; 
+  font-family: 'Californian FB', 'Times New Roman', Times, serif; 
+  font-size: 1.8rem;
+  line-height: 1.6;  
+  margin: 20px auto;
+  max-width: 800px; 
+}
 
 .carousel {
   position: relative;
@@ -377,9 +391,9 @@ footer p {
 /* Contact section */
 
 .contact-us iframe {
-  width: 400px;
-  max-width: 600px;
-  height: 400px;
+  width: 100%;
+  max-width: 600px;     /* allow shrinking earlier */
+  aspect-ratio: 1 / 1;  /* replaces fixed height */
   border-radius: 40px;
   border: none;
 }
@@ -391,12 +405,29 @@ footer p {
   gap: 40px;
   padding: 40px;
   flex-wrap: wrap;
+  max-width: 1300px;         /* limit total width */
+  margin: 0 auto;            /* center the container on very wide screens */
+  box-sizing: border-box;    /* ensure padding is included in width */
 }
 
 .map-section {
   flex: 1;
-  max-width: 600px;
+  max-width: 100%;
   text-align: center;
+}
+
+.map-wrapper {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 40px;
 }
 
 .address {
@@ -408,23 +439,25 @@ footer p {
 
 .contact-text {
   flex: 1;
-  max-width: 400px;
+  max-width: 800px;
+  text-align: left;
+  display: inline-block;   /* shrink to the content width */
+  margin: 0 auto
 }
 
 .contact-text h2 {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 0 10px 0;
   color: #333;
 }
 
 .contact-text p {
   font-size: 0.9rem;
   line-height: 1.2;
-  margin: 2px 0;
+  margin: 0 0 5px 0;
   text-align: left;
+  padding: 0;
 }
 
-/* Future contact form styling */
 .contact-form {
   max-width: 600px;
   margin: 40px auto;
@@ -478,4 +511,75 @@ textarea {
 
 textarea {
   resize: vertical;
+}
+
+@media (max-width: 700px) {
+  .contact-us {
+    flex-direction: column;        /* stack items vertically */
+    align-items: center;           /* center each item horizontally */
+    gap: 20px;
+  }
+
+  .contact-text {
+    display: block;                /* take full width naturally */
+    max-width: 400px;              /* optional: limit width */
+    text-align: left;              /* keep text left-aligned */
+    margin: 0 auto;                /* center the block */
+  }
+
+  .map-section {
+    text-align: center;            /* center map on small screens */
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+/* catering page */
+
+.left-align-tip {
+    text-align: left;
+    padding-left: 4em;    /* Space for the hanging indent */
+    text-indent: -2em;    /* Pulls first line back out */
+}
+
+.left-align-note {
+    text-align: left;
+    padding-left: 4em;    
+    text-indent: -2.5em;    
+}
+
+.catering-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* image 1/3, text 2/3 */
+    gap: 20px;
+    align-items: start;
+    margin: 20px 0;
+}
+
+.catering-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 45px; 
+}
+
+.catering-image {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.catering-text {
+    text-align: left;
+}
+
+/* Hanging indent */
+.hang-left {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+}
+
+/* Responsive – stacks on small screens */
+@media (max-width: 768px) {
+    .catering-grid {
+        grid-template-columns: 1fr; /* stack image above text */
+    }
 }
