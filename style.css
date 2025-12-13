@@ -339,6 +339,7 @@ footer p {
   max-width: 100%;       /* optional max width */
   aspect-ratio: 16 / 16;   /* maintains consistent height based on width */
   margin: 0 auto;
+  display: flex;
   overflow: hidden;
   border-radius: 45px;
   align-items: center;
@@ -353,9 +354,9 @@ footer p {
   position: absolute;
   inset: 0;               /* top:0; right:0; bottom:0; left:0 */
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;   
-  opacity: 1;
+  opacity: 0;
   transition: opacity 1s ease-in-out;  /* smooth fade */
   z-index: 1;
 }
@@ -583,4 +584,5 @@ textarea {
         grid-template-columns: 1fr; /* stack image above text */
     }
 }
+
 
