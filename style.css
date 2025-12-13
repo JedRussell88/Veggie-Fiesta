@@ -355,7 +355,7 @@ footer p {
   width: 100%;
   height: auto;
   object-fit: cover;   
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s ease-in-out;  /* smooth fade */
   z-index: 1;
 }
@@ -583,3 +583,4 @@ textarea {
         grid-template-columns: 1fr; /* stack image above text */
     }
 }
+
