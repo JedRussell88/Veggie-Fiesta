@@ -352,14 +352,12 @@ footer p {
   object-fit: cover;   
   opacity: 0;
   transition: opacity 1s ease-in-out;  /* smooth fade */
-  z-index: 1;
-}
+  }
 
 /* Active image */
 .carousel img.active {
   opacity: 1;
-  z-index: 2;
-}
+  }
 .about-section {
   display: grid;
   grid-template-columns: 1fr;    /* mobile: one column */
@@ -578,6 +576,7 @@ textarea {
         grid-template-columns: 1fr; /* stack image above text */
     }
 }
+
 
 
 
