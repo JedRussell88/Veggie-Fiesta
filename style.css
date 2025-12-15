@@ -336,17 +336,11 @@ footer p {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 100%;       /* optional max width */
+  max-width: 750px;       
   aspect-ratio: 16 / 16;   /* maintains consistent height based on width */
   margin: 0 auto;
-  display: flex;
   overflow: hidden;
   border-radius: 45px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem; /* space between image and text */ 
-  text-align: center;
-  margin-right: 1rem;
 }
 
 /* All images stacked on top of each other */
@@ -584,5 +578,6 @@ textarea {
         grid-template-columns: 1fr; /* stack image above text */
     }
 }
+
 
 
